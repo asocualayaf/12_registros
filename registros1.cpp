@@ -22,6 +22,8 @@ int main(){
 	}
 	//hallando minimo
 	min = datos_empleado[0].salario;
+	strcpy(nmin, datos_empleado[0].nombre);
+	strcpy(smin, datos_empleado[0].sexo);
 	for(int x = 0; x < n; x++){
 		if(datos_empleado[x].salario < min){
 			min = datos_empleado[x].salario;
@@ -31,6 +33,8 @@ int main(){
 	}
 	//Hallando maximo
 	max = datos_empleado[0].salario;
+	strcpy(nmax, datos_empleado[0].nombre);
+	strcpy(smax, datos_empleado[0].sexo);
 	for(int y = 0; y < n; y++){
 		if(datos_empleado[y].salario > max){
 			max = datos_empleado[y].salario;
@@ -38,7 +42,7 @@ int main(){
 			strcpy(smax, datos_empleado[y].sexo);
 		} 	
 	}
-	
+	if(n>1){
 	cout<<"datos de la persona con menor salario: "<<endl;
 	cout<<"Nombre: "<<nmin<<endl;
 	cout<<"sexo: "<<smin<<endl;
@@ -48,6 +52,12 @@ int main(){
 	cout<<"Nombre: "<<nmax<<endl;
 	cout<<"sexo: "<<smax<<endl;
 	cout<<"Salario: "<<max<<endl;
-	
+	} else{
+		cout<<"Datos del unico trabajador: "<<endl;
+		cout<<"Nombre: "<<nmax<<endl;
+		cout<<"sexo: "<<smax<<endl;
+		cout<<"Salario: "<<max<<endl;
+	}
+
 	return 0;
 }
